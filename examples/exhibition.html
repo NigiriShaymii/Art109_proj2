@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Aquarium</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+<script src="build/p5.js"></script>
+<script src="build/p5.sound.min.js"></script>
+	</head>
+	<!--Applicable to all webpages -->
+	<header>
+		<div id="icon">
+			<a href="home.html"> <img src="media/kelp.png" href="home.html"> </a>
+		</div>
+		<nav class="navbar">
+			<ul>
+				<li><a href="exhibition.html"> Exhibition </a></li>
+				<li><a href="special.html"> Special </a></li>
+			</ul>
+		</nav>
+	</header>
+	<body class="gallery">
+				<img src="media/sound.png" style="width:5%" class="sound">
+		<section class="exhibit">
+			<!-- Coastal -->
+			<div class="text">
+				<h2> Tidal Coast </h2>
+				<p> Explorers love to venture out to the coast and spot all sorts of creatures residing the area. Here, you can gain easy access and close-up to all your friendly rocky friends. From sea anemonies to sea snails, cherish some face-to-face moments with our famouse touch pool. </p>
+			</div>
+			<div class="image">
+				<img class="otter" src="media/ott.jpg">
+			</div>
+		</section>
+		<section class="exhibit">
+			<!-- Kelp forest -->
+						<div class="image">
+
+				<img class="shark" src="media/sh.jpg">
+			</div>
+			<div class="text">
+				<h2> Kelp Forest </h2>
+				<p> Within several thousand feet from the Web Aquarium, there is a kelp forest from the coast that is home to hundreds of species. We bring the kelp forest to you to explore what roams within the seaweed-rich environment.  </p>
+			</div>
+
+		</section>
+		<!-- Video -->
+		<div class="vid">
+						<a href="https://www.youtube.com/watch?v=FukcZF9ARy8"> <img class="co" src="media/co.jpg"> </a>
+			<a href="https://www.youtube.com/watch?v=aGGBGcjdjXA"> <img class="angel" src="media/angel.jpg"></a>
+
+		</div>
+
+		<audio id="chirp" loop>
+				<source src="sound/under.wav" type="audio/mpeg">
+		</audio>
+		<script>
+
+		let audioStart = false;
+
+function setup() {
+	noCanvas();
+}
+
+function mousePressed() {
+	let snd = new Audio("sound/under.wav");
+	var sound = new AudioContext;
+
+	if(!audioStart) {
+		getAudioContext().resume();
+		snd.play();
+		snd.loop = true;
+		snd.volume = 0.2;
+		console.log("audio on");
+		console.log(snd.loop);
+		audioStart = true;
+		console.log("playing");
+	}
+}
+</script>
+
+	</body>
+</html>

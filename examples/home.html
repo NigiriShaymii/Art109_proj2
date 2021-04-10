@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Aquarium</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+		<script src="js/slider.js"></script>
+		<script src="build/p5.js"></script>
+		<script src="build/p5.sound.min.js"></script>
+	</head>
+
+	<!--Applicable to all webpages -->
+	<header>
+		<div id="icon">
+			<a href="home.html"> <img src="media/kelp.png" href="home.html"> </a>
+		</div>
+		<nav class="navbar">
+			<ul>
+				<li><a href="exhibition.html"> Exhibition </a></li>
+				<li><a href="special.html"> Special </a></li>
+			</ul>
+		</nav>
+	</header>
+	<body>
+		<img src="media/sound.png" style="width:5%" class="sound">
+		<div class="section1">
+			<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <img src="media/fish.jpg" style="width:100%">
+</div>
+
+<div class="mySlides fade">
+  <img src="media/sea.jpg" style="width:100%">
+</div>
+
+<div class="mySlides fade">
+  <img src="media/jell.png" style="width:100%">
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+		</div>
+		<section class="intro">
+			<div class="a1">
+				<h2> About </h2>
+				<p> Web Aquarium is proud to educate about the wonders of ocean life to our visitors. With over 100 exhibits displayed for the past decade, our exhibits inspire and create curiosity within millions of students and guests. We prioritize giving you an insight of aquatic life at its most natural state. </p>
+			</div>
+			<div class="a2">
+				<h2> News </h2>
+				<p> Our newest exhibition features some of our top marine biologist's greatest findings in the
+				 deep-sea. Please join us as we dive into their discovery and their latest news. </p>
+				<a href="special.html"> <button type="submit" class="btn btn-primary">Visit Now! </button> </a>
+
+			</div>
+
+		<audio id="chirp" loop>
+				<source src="sound/birb.mp3" type="audio/mpeg">
+		</audio>
+
+		<script>
+
+		let audioStart = false;
+
+function setup() {
+	noCanvas();
+
+}
+
+function mousePressed() {
+  let snd = new Audio("sound/birb.mp3");
+	var sound = new AudioContext;
+
+	if(!audioStart) {
+		getAudioContext().resume();
+		snd.play();
+		snd.loop = true;
+		snd.volume = 0.2;
+		console.log("audio on");
+		console.log(snd.loop);
+		audioStart = true;
+		console.log("playing");
+	}
+}
+</script>
+
+		</section>
+	</body>
+</html>
